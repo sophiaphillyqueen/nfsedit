@@ -85,10 +85,13 @@ print TAK $theftype . "\n";
 close TAK;
 system("touch",$edflag);
 
+
+system("echo","Beginning NFS edit of: " . $outerfile . ":");
 while ( -f $edflag )
 {
   sleep(2);
 }
+system("echo","Finishing NFS edit of: " . $outerfile . ":");
 system("cp",$edfile,$outerfile);
 
 
